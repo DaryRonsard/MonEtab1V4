@@ -1,0 +1,30 @@
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+.report-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.report-section select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.report-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.report-section .btn-pdf {
+    background-color: #cc0000;
+    color: white;
+}
+.report-section .btn-excel {
+    background-color: #4CAF50;
+    color: white;
+}

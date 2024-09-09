@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% url '' %}">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <div class="col-md-2 sidebar bg-light border-right p-0">
+                <div class="log">
+                   <p class="text center"><span>MonEtab</span></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-user-graduate"></i> Students</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-user-check"></i> Registration Request</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-users"></i> Parents</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-school"></i> Classes</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-calendar-check"></i> Attendance</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-bell"></i> Notify</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-bus"></i> Transport</a></li>
+                    <li class="list-group-item"><a href="#"><i class="fas fa-cog"></i> General Settings</a></li>
+                </ul>
+                <div class="logout-section text-center p-3">
+                    <button class="btn btn-danger w-100"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+            <div class="col-md-10 content">
+                <div class="header bg-info text-white d-flex justify-content-between align-items-center p-3">
+                    <span>"Vivez comme si vous deviez mourir demain. Apprenez comme si vous deviez vivre éternellement."</span>
+                    <div class="user-info d-flex align-items-center">
+                        <span>admin</span>
+                        <img src="images.png" alt="User Icon" class="rounded-circle ml-2" width="30">
+                    </div>
+                </div>
+                    <div class="main-content">
+                        <h1>Rapport</h1>
+                        <div class="report-section">
+                            <select class="form-select">
+                                <option selected>Sélectionnez une option</option>
+                                <option value="1">Liste des élèves</option>
+                                <option value="2">Liste des professeurs</option>
+                                <option value="3">Liste des utilisateurs</option>
+                            </select>
+                            <button class="btn btn-pdf">Générer format PDF</button>
+                            <button class="btn btn-excel">Générer format Excel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+    <!-- Sources for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
