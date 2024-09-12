@@ -1,14 +1,15 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-
+from school.models.app_settings_model import AppSettingsModel
 from school.models.school_model import SchoolModel
 from school.forms.school_forms import SchoolForm
 
-
+@login_required(login_url='dashboard:sign_in')
 def list_school(request):
     school = SchoolModel.objects.filter(status=True)
     context = {
-        'schools': school
+        'school': school
     }
     return render(request, "listSchool.html", context)
 
@@ -19,7 +20,12 @@ def create_school(request):
         'submit_value': 'Ajouter',
         'h1': 'Nouvelle Ecole',
     }
-
+    setting = AppSettingsModel.objects.all()
+    school = SchoolModel.objects.all()
+    if school:
+        return redirect('dashboard:sign_in')
+    if not setting:
+        return redirect('school:setting-create')
     if request.method == "POST":
         form = SchoolForm(request.POST)
         if form.is_valid():
@@ -33,7 +39,7 @@ def create_school(request):
 
     return render(request, "formsSchool.html", context)
 
-
+@login_required(login_url='dashboard:sign_in')
 def update_school(request):
     school = SchoolModel.objects.get(id=id)
     context = {
@@ -54,7 +60,7 @@ def update_school(request):
 
     return render(request, "formsSchool.html", context)
 
-
+@login_required(login_url='dashboard:sign_in')
 def delete_school(request):
     school = get_object_or_404(SchoolModel, id=id)
     # school.delete()

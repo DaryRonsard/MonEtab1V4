@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row vh-100">
 
+            {% include 'Menu.html' %}
+
+            <div class="col-md-10 content">
+
+                <div class="header bg-info text-white d-flex justify-content-between align-items-center p-3">
+                    <span>"Vivez comme si vous deviez mourir demain. Apprenez comme si vous deviez vivre éternellement."</span>
+                    <div class="user-info d-flex align-items-center">
+                        <span>admin</span>
+                        <img src="image/images.png" alt="User Icon" class="rounded-circle ml-2" width="30">
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-between align-items-center my-3 px-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">User</li>
+                        </ol>
+                    </nav>
+                  <button class="btn btn-info"><a href="{% url 'school:school-create' %}"><i class="fas fa-plus-circle"></i></a> Create User</button>
+                </div>
+
+
+                <div class="card m-4 p-4">
+                    <h3>SUBJECT</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="form-group">
+                            <label for="classSelect">Select Class Name:</label>
+                            <select id="classSelect" class="form-control">
+                                <option>affiche 25</option>
+                                <option>affiche 35</option>
+                                <option>affiche 65</option>
+                                <option>tout</option>
+
+                            </select>
+                        </div>
+                        <input type="text" class="form-control w-25" placeholder="Search...">
+                    </div>
+
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Ecole</th>
+                                <th>Lien logo</th>
+                                <th>Date Creation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for school in school %}
+                            <tr>
+                                <td>1</td>
+                                <td>{{ school.name }}</td>
+                                <td>{{ school.url_logo }}</td>
+                                <td>{{ school.created_at }}</td>
+
+                                <td>
+                                    <a href="#" class="text-success"><i class="fas fa-edit"></i></a>
+                                    <a href="#" class="text-danger ml-2"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

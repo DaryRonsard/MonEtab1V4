@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Add school</h1>
+   <form method="POST">
+       {% csrf_token %}
+       {{ form.as_p }}
+
+       <button type="submit">Enregistrer</button>
+   </form>
 
 </body>
 </html>

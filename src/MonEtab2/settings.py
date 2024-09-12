@@ -44,8 +44,16 @@ INSTALLED_APPS = [
     'school.apps.SchoolConfig',
     'base.apps.BaseConfig',
     'dashboard.apps.DashboardConfig',
+    'api.apps.ApiConfig',
+
+    #librairie
+    'rest_framework',
 
 ]
+AUTH_USER_MODEL = 'user.UserModel'
+#AUTH_USER_MODEL = 'your_app.YourCustomUser'
+#SESSION_EXPIRE_AT_BROWSER_CLOSE=True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -112,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-#AUTH_USER_MODEL = 'user.User'
+
 
 LANGUAGE_CODE = 'en-us'
 

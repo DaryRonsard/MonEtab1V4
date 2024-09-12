@@ -1,15 +1,16 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from user.models.role_user_model import RoleUserModel
 from user.forms.role_forms import RoleUserForms
 
-
+@login_required(login_url='dashboard:sign_in')
 def list_role_user(request):
     role = RoleUserModel.objects.all()
     context = {'role': role}
     return render(request, 'role/list.html', context)
 
-
+@login_required(login_url='dashboard:sign_in')
 def create_role_user(request):
     form = RoleUserForms(request.POST or None)
     if request.method == 'POST':
@@ -21,7 +22,7 @@ def create_role_user(request):
     context = {'form': form}
     return render(request, 'role/forms.html', context)
 
-
+@login_required(login_url='dashboard:sign_in')
 def update_role_user(request, id):
     role_user = RoleUserModel.objects.get(id=id)
     context = {
@@ -42,7 +43,7 @@ def update_role_user(request, id):
 
     return render(request, "role/forms.html", context)
 
-
+@login_required(login_url='dashboard:sign_in')
 def delete_role_user(request, id):
     role_user = get_object_or_404(RoleUserModel, id=id)
     # role_user.delete()

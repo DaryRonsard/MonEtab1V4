@@ -3,21 +3,21 @@
        <p class="text center"><span>MonEtab</span></p>
     </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-user-graduate"></i> Students</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-user-check"></i> Registration Request</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-users"></i> Parents</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-school"></i> Classes</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-calendar-check"></i> Attendance</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-bell"></i> Notify</a></li>
+            <li class="list-group-item"><a href="{% url 'dashboard:index' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="list-group-item"><a href="{% url 'teacher:list-teachers' %} "><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+            <li class="list-group-item"><a href="{% url 'student:list-students'%}"><i class="fas fa-user-graduate"></i> Students</a></li>
+            <li class="list-group-item"><a href="{% url 'user_role:list-user' %} "><i class="fas fa-user-check"></i>User</a></li>
+            <li class="list-group-item"><a href="{% url 'user_role:list-role' %}"><i class="fas fa-users"></i>Role</a></li>
+            <li class="list-group-item"><a href=" {% url 'school:list-school' %}"><i class="fas fa-school"></i> School</a></li>
+            <li class="list-group-item"><a href="{% url 'teacher:list-teachers' %}"><i class="fas fa-calendar-check"></i> Teacher</a></li>
+            <li class="list-group-item"><a href="{% url 'address:list-adress' %}"><i class="fas fa-calendar-alt"></i> Adresse</a></li>
+            <li class="list-group-item"><a href="{% url 'report:index' %}"><i class="fas fa-bell"></i> Rapport</a></li>
             <li class="list-group-item"><a href="#"><i class="fas fa-bus"></i> Transport</a></li>
-            <li class="list-group-item"><a href="#"><i class="fas fa-cog"></i> General Settings</a></li>
+            <li class="list-group-item"><a href="{% url 'school:setting-list' %}"><i class="fas fa-cog"></i> Settings</a></li>
         </ul>
      
         <div class="logout-section text-center p-3">
-            <button class="btn btn-danger w-100"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <button class="btn btn-danger w-100"><a href="{% url 'dashboard:logout' %}"><i class="fas fa-sign-out-alt"></i></a> Logout</button>
         </div>
         
 </div>
